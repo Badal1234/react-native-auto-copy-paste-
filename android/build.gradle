@@ -1,0 +1,62 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext {
+        buildToolsVersion = "28.0.3"
+        minSdkVersion = 21
+        compileSdkVersion = 28
+        targetSdkVersion = 28
+        supportLibVersion = "28.0.0"
+        pdfViewer = "3.1.0-beta.1"
+    }
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:3.4.1")
+        compile project(':react-native-document-picker')
+        compile project(':react-native-file-viewer')
+        addUnimodulesDependencies()
+        //compile project(':react-native-get-real-path')
+        //compile project(':react-native-view-pdf')
+        ///compile project(':react-native-fs')
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        mavenLocal()
+        
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url("$rootDir/../node_modules/react-native/android")
+        }
+        maven {
+            // Android JSC is installed from npm
+            url("$rootDir/../node_modules/jsc-android/dist")
+        }
+
+        google()
+        jcenter()
+    }
+}
+
+android {
+ 
+    packagingOptions {
+      pickFirst 'lib/x86/libc++_shared.so'
+      pickFirst 'lib/x86_64/libjsc.so'
+      pickFirst 'lib/arm64-v8a/libjsc.so'
+            pickFirst 'lib/arm64-v8a/libc++_shared.so'
+      pickFirst 'lib/x86_64/libc++_shared.so'
+      pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+   }
+ 
+   }
+   defaultConfig {
+      multiDexEnabled true
+  }
