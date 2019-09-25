@@ -76,20 +76,18 @@ alert('Can\'t handle url: ' );
             res.name,
             res.size
           );
-        } catch (err) {
-          if (DocumentPicker.isCancel(err)) {
-            // User cancelled the picker, exit any dialogs or menus and move on
-          } else {
-            throw err;
-          }
-        }
+        } 
     
     
-      } else {
+      else {
         console.log('Camera permission denied');
       }
     } catch (err) {
-      console.warn(err);
+      if (DocumentPicker.isCancel(err)) {
+        // User cancelled the picker, exit any dialogs or menus and move on
+      } else {
+        throw err;
+      }
     }
 
     this.props.navigation.navigate('Creator')
