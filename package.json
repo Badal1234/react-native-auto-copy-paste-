@@ -24,7 +24,7 @@
     "react-navigation": "^4.0.0",
     "react-navigation-stack": "^1.5.3",
     "rn-fetch-blob": "^0.10.16",
-    "yarn": "^1.17.3"
+    "yarn": "^1.22.0"
   },
   "devDependencies": {
     "@babel/core": "7.6.0",
