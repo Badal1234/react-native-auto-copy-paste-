@@ -10,7 +10,7 @@
   "dependencies": {
     "expo-document-picker": "^6.0.0",
     "react": "16.8.6",
-    "react-native": "0.60.5",
+    "react-native": "0.62.3",
     "react-native-document-picker": "^3.2.4",
     "react-native-file-picker": "0.0.18",
     "react-native-file-selector": "0.0.7",
